@@ -8,10 +8,10 @@ on:
 jobs:
   static-code-analysis-python:
     if: contains( fromJSON(github.event.inputs.client_payload).payload.control_ids, '544911b5-b570-44e2-96ca-41036a5074ff') || fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'static-code-analysis-python'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
     - name: python-code-scanning
-      uses: jitsecurity-controls/jit-github-action@v1.6
+      uses: jitsecurity-controls/jit-github-action@v1.7
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
@@ -22,10 +22,10 @@ jobs:
 
   static-code-analysis-js:
     if: contains( fromJSON(github.event.inputs.client_payload).payload.control_ids, '3be2887f-aebc-4d57-8247-343e93b5625e') || fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'static-code-analysis-js'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
     - name: semgrep-code-scanning
-      uses: jitsecurity-controls/jit-github-action@v1.6
+      uses: jitsecurity-controls/jit-github-action@v1.7
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
@@ -36,10 +36,10 @@ jobs:
 
   static-code-analysis-go:
     if: contains( fromJSON(github.event.inputs.client_payload).payload.control_ids, '47b3a8fe-f91c-4a4d-82f6-ee7ead1fe6bb') || fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'static-code-analysis-go'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
     - name: golang-code-scanning
-      uses: jitsecurity-controls/jit-github-action@v1.6
+      uses: jitsecurity-controls/jit-github-action@v1.7
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
@@ -50,10 +50,10 @@ jobs:
 
   software-component-analysis-python:
     if: contains( fromJSON(github.event.inputs.client_payload).payload.control_ids, '133e6517-14d1-4a2e-89d9-83da903a1272') || fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'software-component-analysis-python'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
     - name: dependency-check-python
-      uses: jitsecurity-controls/jit-github-action@v1.6
+      uses: jitsecurity-controls/jit-github-action@v1.7
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
@@ -64,10 +64,10 @@ jobs:
 
   software-component-analysis-js:
     if: contains( fromJSON(github.event.inputs.client_payload).payload.control_ids, '1b183885-419f-45ff-a7a4-0eff5b38db66') || fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'software-component-analysis-js'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
     - name: dependency-check-node
-      uses: jitsecurity-controls/jit-github-action@v1.6
+      uses: jitsecurity-controls/jit-github-action@v1.7
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
@@ -78,10 +78,10 @@ jobs:
 
   software-component-analysis-go:
     if: contains( fromJSON(github.event.inputs.client_payload).payload.control_ids, '42871f9d-b640-4697-8699-a5ea4fae884f') || fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'software-component-analysis-go'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
     - name: nancy
-      uses: jitsecurity-controls/jit-github-action@v1.6
+      uses: jitsecurity-controls/jit-github-action@v1.7
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
@@ -92,10 +92,10 @@ jobs:
 
   secret-detection:
     if: contains( fromJSON(github.event.inputs.client_payload).payload.control_ids, 'ba097cc5-4f5c-4f6d-997a-9558f4ff2731') || fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'secret-detection'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
     - name: secrets-detection
-      uses: jitsecurity-controls/jit-github-action@v1.6
+      uses: jitsecurity-controls/jit-github-action@v1.7
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
